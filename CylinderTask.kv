@@ -1,0 +1,52 @@
+#:kivy 1.11.1
+#CylinderTask.kv
+
+<GridLayout>:
+
+    cols: 2
+    rows: 5
+
+    Label:
+
+        text: 'Input Animal ID: '
+        size_hint_x: 1
+        size_hint_y: None
+
+    TextInput:
+
+        id: animalBox
+        multiline: False
+        size_hint_x: 1
+        size_hint_y: None
+        on_text: root.process()
+
+    Label:
+
+        text: 'Input Test ID: '
+        size_hint_x: 1
+        size_hint_y: None
+
+    TextInput:
+
+        id: trialBox
+        multiline: False
+        size_hint_x: 1
+        size_hint_y: None
+        on_text: root.process()
+
+    Label:
+
+        text: 'Left: ' + str(root.left)
+
+    Label:
+
+        text: 'Right: ' + str(root.right)
+
+    Label:
+
+        text: 'Both: ' + str(root.both)
+
+    Button:
+
+        text: 'Complete Trial'
+        on_press: root.completeTrial()
