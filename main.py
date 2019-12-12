@@ -1,7 +1,7 @@
 #python3
 #main.py
 
-import kivy, openpyxl, os
+import kivy, openpyxl, os, datetime
 
 kivy.require('1.11.1')
 
@@ -49,6 +49,7 @@ class CylinderTask(GridLayout):
         ws['b2']= self.left
         ws['a3']= 'Both:'
         ws['b3']= self.both
+        ws['a4']= datetime.datetime.today()
 
         wb.save(filename = 'results/%s' % fName)
         wb.close()
